@@ -79,37 +79,58 @@
   ],
   "burgers": [
     {
-      "nome": "Matheus Battisti",
+      "nome": "Bruno",
+      "pao": "Parmesão e Orégano",
       "carne": "Picanha",
-      "pao": "Italiano Branco",
       "opcionais": [
-        "Bacon",
-        "Salame",
-        "Cebola roxa"
+        "Cebola roxa",
+        "Cheddar"
       ],
-      "status": "Finalizado",
-      "id": 1
+      "id": 3,
+      "status": "Solicitado"
     },
     {
-      "nome": "João Coelho",
-      "carne": "Maminha",
-      "pao": "3 Queijos",
+      "nome": "Josef",
+      "pao": "Integral",
+      "carne": "Veggie burger",
       "opcionais": [
-        "Salame",
-        "Cebola roxa"
+        "Pepino",
+        "Tomate"
+      ],
+      "id": 5,
+      "status": "Finalizado"
+    },
+    {
+      "nome": "Zé",
+      "pao": "3 Queijos",
+      "carne": "Picanha",
+      "opcionais": [
+        "Cheddar",
+        "Tomate"
       ],
       "status": "Solicitado",
-      "id": 2
+      "id": 6
     },
     {
-      "nome": "bartolomeu",
-      "paes": "3 Queijos",
-      "carnes": "Picanha",
+      "nome": "Jeison",
+      "pao": "3 Queijos",
+      "carne": "Alcatra",
       "opcionais": [
-        "Salame",
         "Cebola roxa"
       ],
-      "id": 3
+      "status": "Em produção",
+      "id": 7
+    },
+    {
+      "nome": "Maria",
+      "pao": "3 Queijos",
+      "carne": "Alcatra",
+      "opcionais": [
+        "Bacon",
+        "Salame"
+      ],
+      "status": "Solicitado",
+      "id": 8
     }
   ]
 }

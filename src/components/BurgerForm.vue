@@ -47,7 +47,7 @@
           <span>{{ opcional.tipo }}</span>
         </div>
       </div>
-
+      <Mensagem :msg="msg" v-show="msg" />
       <div class="input-container">
         <input class="submit-btn" type="submit" value="Montar meu Burger!" />
       </div>
@@ -56,6 +56,8 @@
 </template>
 
 <script>
+import Mensagem from "../components/Mensagem.vue";
+
 export default {
   name: "BurgerForm",
   data() {
@@ -67,6 +69,8 @@ export default {
       paoSelected: "",
       carneSelected: "",
       optSelected: [],
+      msg: "",
+      status: "",
     };
   },
   methods: {
@@ -83,9 +87,10 @@ export default {
 
       const enviarDados = {
         nome: this.nome,
-        paes: this.paoSelected,
-        carnes: this.carneSelected,
+        pao: this.paoSelected,
+        carne: this.carneSelected,
         opcionais: Array.from(this.optSelected),
+        status: "Solicitado",
       };
 
       const dadosJson = JSON.stringify(enviarDados);
@@ -95,23 +100,34 @@ export default {
         headers: { "Content-Type": "application/json" },
         body: dadosJson,
       });
+
+      this.msg = "Pedido enviado com sucesso.";
+      setTimeout(() => (this.msg = ""), 3000);
+
+      this.nome = "";
+      this.paoSelected = "";
+      this.carneSelected = "";
+      this.optSelected = "";
     },
   },
   mounted() {
     this.carregarFormulario();
+  },
+  components: {
+    Mensagem,
   },
 };
 </script>
 
 <style scoped>
 #burger-form {
-  max-width: 400px;
+  max-width: 330px;
   margin: 0 auto;
 }
 .input-container {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 label {
   font-weight: bold;
